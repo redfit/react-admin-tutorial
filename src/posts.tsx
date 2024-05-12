@@ -12,8 +12,18 @@ import {
   useRecordContext,
 } from "react-admin";
 
+const postFilters = [
+  <TextInput key={1} source="q" label="Search" alwaysOn />,
+  <ReferenceInput
+    key={2}
+    source="userId"
+    label="User"
+    reference="users"
+    alwaysOn
+  />,
+];
 export const PostList = () => (
-  <List>
+  <List filters={postFilters}>
     <Datagrid>
       <TextField source="id" />
       <ReferenceField source="userId" reference="users" link="show" />
