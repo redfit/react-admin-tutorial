@@ -4,8 +4,12 @@ import {
   ReferenceField,
   TextField,
   EditButton,
+  Edit,
+  Create,
+  ReferenceInput,
+  SimpleForm,
+  TextInput,
 } from "react-admin";
-import { Edit, ReferenceInput, SimpleForm, TextInput } from "react-admin";
 
 export const PostList = () => (
   <List>
@@ -27,4 +31,14 @@ export const PostEdit = () => (
       <TextInput source="body" multiline rows={5} />
     </SimpleForm>
   </Edit>
+);
+
+export const PostCreate = () => (
+  <Create>
+    <SimpleForm>
+      <ReferenceInput source="userId" reference="users" />
+      <TextInput source="title" />
+      <TextInput source="body" multiline rows={5} />
+    </SimpleForm>
+  </Create>
 );
