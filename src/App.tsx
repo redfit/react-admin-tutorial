@@ -4,9 +4,10 @@ import { UserList } from "./users";
 import { PostEdit, PostList, PostCreate } from "./posts";
 import PostIcon from "@mui/icons-material/Book";
 import UserIcon from "@mui/icons-material/Group";
+import { Dashboard } from "./Dashboard";
 
 export const App = () => (
-  <Admin dataProvider={dataProvider}>
+  <Admin dataProvider={dataProvider} dashboard={Dashboard}>
     <Resource
       name="posts"
       list={PostList}
